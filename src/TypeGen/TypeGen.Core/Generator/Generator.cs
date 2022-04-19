@@ -377,7 +377,7 @@ namespace TypeGen.Core.Generator
         private IEnumerable<string> GenerateNotMarked(Type type, string outputDirectory)
         {
             var typeInfo = type.GetTypeInfo();
-            if (typeInfo.IsClass)
+            if (typeInfo.IsClass || typeInfo.IsAnsiClass)
             {
                 return GenerateClass(type, new ExportTsClassAttribute { OutputDir = outputDirectory });
             }
