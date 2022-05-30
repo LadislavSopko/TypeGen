@@ -3,6 +3,12 @@
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DocumentationFile>TypeGen.Core.xml</DocumentationFile>
     <LangVersion>latest</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Configurations>Debug;Release;MakeNuget</Configurations>
+    <Version>$(MainVersion)</Version>
+    <AssemblyVersion>$(MainVersion)</AssemblyVersion>
+    <FileVersion>$(MainVersion)</FileVersion>
+    <PackageVersion>$(MainVersion)</PackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Templates\Class.tpl" />
@@ -38,4 +44,12 @@
     <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
   </ItemGroup>
+  
+  <Target Name="PublishNuget" Condition="'$(Configuration)|$(Platform)' == 'MakeNuget|AnyCPU'" AfterTargets="pack">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="myAssemblyInfo" />
+    </GetAssemblyIdentity>
+    <Message Text="PublishNuget" />
+    <Exec Command="dotnet nuget push bin\MakeNuget\$(PackageId).$(MainVersion).nupkg --source ZeroX-3u-gitlab  --skip-duplicate" />
+  </Target>
 </Project>
