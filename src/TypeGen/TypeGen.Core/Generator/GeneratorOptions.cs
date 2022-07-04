@@ -13,9 +13,9 @@ namespace TypeGen.Core.Generator
         public static int DefaultTabLength => 4;
         public static bool DefaultUseTabCharacter => false;
         public static bool DefaultExplicitPublicAccessor => false;
-        public static TypeNameConverterCollection DefaultFileNameConverters => new TypeNameConverterCollection(new PascalCaseToKebabCaseConverter());
+        public static TypeNameConverterCollection DefaultFileNameConverters => new TypeNameConverterCollection(new AsIsConverter());
         public static TypeNameConverterCollection DefaultTypeNameConverters => new TypeNameConverterCollection();
-        public static MemberNameConverterCollection DefaultPropertyNameConverters => new MemberNameConverterCollection(new PascalCaseToCamelCaseConverter());
+        public static MemberNameConverterCollection DefaultPropertyNameConverters => new MemberNameConverterCollection(new AsIsConverter());
         public static MemberNameConverterCollection DefaultEnumValueNameConverters => new MemberNameConverterCollection();
         public static MemberNameConverterCollection DefaultEnumStringInitializersConverters => new MemberNameConverterCollection();
         public static string DefaultTypeScriptFileExtension => "ts";
