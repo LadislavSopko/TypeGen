@@ -32,9 +32,9 @@ namespace TypeGen.Cli.Test.Models
             Assert.False(tgConfig.AddFilesToProject);
             Assert.Equal("ts", tgConfig.TypeScriptFileExtension);
             Assert.Equal(4, tgConfig.TabLength);
-            Assert.Equal(new [] { "PascalCaseToKebabCaseConverter" }, tgConfig.FileNameConverters);
+            Assert.Equal(new [] { "AsIsConverter" }, tgConfig.FileNameConverters);
             Assert.Equal(new string[0], tgConfig.TypeNameConverters);
-            Assert.Equal(new[] { "PascalCaseToCamelCaseConverter" }, tgConfig.PropertyNameConverters);
+            Assert.Equal(new[] { "AsIsConverter" }, tgConfig.PropertyNameConverters);
             Assert.Equal(new string[0], tgConfig.EnumValueNameConverters);
             Assert.Equal(new string[0], tgConfig.ExternalAssemblyPaths);
             Assert.False(tgConfig.CreateIndexFile);
