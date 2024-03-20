@@ -9,6 +9,7 @@
     <AssemblyVersion>$(MainVersion)</AssemblyVersion>
     <FileVersion>$(MainVersion)</FileVersion>
     <PackageVersion>$(MainVersion)</PackageVersion>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Templates\Class.tpl" />
