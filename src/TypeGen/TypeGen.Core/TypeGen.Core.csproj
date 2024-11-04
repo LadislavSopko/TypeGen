@@ -51,6 +51,6 @@
       <Output TaskParameter="Assemblies" ItemName="myAssemblyInfo" />
     </GetAssemblyIdentity>
     <Message Text="PublishNuget" />
-    <Exec Command="dotnet nuget push bin\MakeNuget\$(PackageId).$(MainVersion).nupkg --source $(PublishNugetFeed) --api-key 3u  --skip-duplicate" />
+    <Exec Command="dotnet nuget push bin\MakeNuget\$(PackageId).$(MainVersion).nupkg --source ZeroX-3u-gitlab  --skip-duplicate" />
   </Target>
 </Project>
